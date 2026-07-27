@@ -1,30 +1,30 @@
 class Sqrail < Formula
   desc "Minimal SQL-on-files CLI for coding agents"
   homepage "https://yhay81.github.io/sqrail/"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/yhay81/sqrail/releases/download/v0.2.0/sqrail-v0.2.0-macos-arm64.tar.gz"
-      sha256 "ca31f80a68a2b4a9935ab9e03350a14d9b007c8baa9afc15337a0003c306f3aa"
+      url "https://github.com/yhay81/sqrail/releases/download/v0.2.1/sqrail-v0.2.1-macos-arm64.tar.gz"
+      sha256 "04e8789ad3f908b0dc6521e75f2aa3c2cac903f2b6c1e2238377dec9cf112169"
     end
 
     on_intel do
-      url "https://github.com/yhay81/sqrail/releases/download/v0.2.0/sqrail-v0.2.0-macos-x86_64.tar.gz"
-      sha256 "ebae43814503a6941748eb2cf2f39484fb173f06dbb07707a66465ac791e56aa"
+      url "https://github.com/yhay81/sqrail/releases/download/v0.2.1/sqrail-v0.2.1-macos-x86_64.tar.gz"
+      sha256 "d651ea2635ac91bc95bbd0327af75f4f8d5ecf8c1adbe5fd8c9f075a9c6c4760"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/yhay81/sqrail/releases/download/v0.2.0/sqrail-v0.2.0-linux-arm64.tar.gz"
-      sha256 "8fb2ffb963470ff8f744faca1a46b4a9f5e68cf615ee60691e4a98f73814a63c"
+      url "https://github.com/yhay81/sqrail/releases/download/v0.2.1/sqrail-v0.2.1-linux-arm64.tar.gz"
+      sha256 "3d79ae318e4c2375a1d3f02861e7b4465dac856b18fe1a6ee5e19fb1e7e0c899"
     end
 
     on_intel do
-      url "https://github.com/yhay81/sqrail/releases/download/v0.2.0/sqrail-v0.2.0-linux-x86_64.tar.gz"
-      sha256 "d7bd88814075726ca48a0b168e3aeb24b0a5fdf774303fe033415aecda2d5708"
+      url "https://github.com/yhay81/sqrail/releases/download/v0.2.1/sqrail-v0.2.1-linux-x86_64.tar.gz"
+      sha256 "a8415bf4e894e25551cde2e01173a8d2f4c7b93c8dbcd3ae2327c8959bd33815"
     end
   end
 
