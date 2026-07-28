@@ -1,8 +1,8 @@
 class Sqrail < Formula
   desc "Minimal SQL-on-files CLI for coding agents"
   homepage "https://yhay81.github.io/sqrail/"
-  url "https://github.com/yhay81/sqrail/archive/refs/tags/v0.2.2.tar.gz"
-  sha256 "417c1ab2d5ba7562ab7b02e1e743dec63481629ed4f39fbff6830382d329e805"
+  url "https://github.com/yhay81/sqrail/archive/refs/tags/v0.3.0.tar.gz"
+  sha256 "1837c06ec24d331337ea5f20bf3a8f8a229579929e11daabc8f52a44d96a5419"
   license "MIT"
 
   depends_on "cmake" => :build
