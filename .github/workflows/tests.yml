@@ -5,11 +5,15 @@ on:
     branches:
       - main
   pull_request:
+  schedule:
+    - cron: "23 5 * * 1"
+  workflow_dispatch:
 
 permissions: {}
 
 jobs:
   test-bot:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     strategy:
       fail-fast: false
       matrix:
@@ -55,3 +59,22 @@ jobs:
         with:
           name: bottles_${{ matrix.os }}
           path: '*.bottle.*'
+
+  dependency-compatibility:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    name: Latest Homebrew dependency compatibility
+    runs-on: macos-26
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@df4b09108a1de9d6f995fe68f302b3f68bd6d2ef # 2026.07.20.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build against current Homebrew dependencies
+        run: brew install --build-from-source yhay81/tap/sqrail
+      - name: Test formula
+        run: brew test yhay81/tap/sqrail
+      - name: Verify linkage
+        run: brew linkage --test yhay81/tap/sqrail
