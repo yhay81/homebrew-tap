@@ -1,8 +1,8 @@
 class Sqrail < Formula
   desc "Bounded SQL-on-files CLI for coding agents"
   homepage "https://sqrails.yhay81.com"
-  url "https://github.com/yhay81/sqrail/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "dbd6af7ecfda3838ace47f2d2e3ec27047e2ecdcf40754c15e6c8911ead84d17"
+  url "https://github.com/yhay81/sqrail/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "e71bef34fe96f0afaa99a5135e2e45fe3ef4ef414c7b17fcc155a7b2fc08a235"
   license "MIT"
 
   depends_on "cmake" => :build
@@ -24,6 +24,8 @@ class Sqrail < Formula
     assert_match "sqrail #{version}", version_output
     assert_match "DuckDB v#{Formula["duckdb"].version}", version_output
     assert_equal "{\"answer\":42}\n", shell_output("#{bin}/sqrail run 'SELECT 42 AS answer'")
+    assert_path_exists share/"sqrail/skills/sqrail/SKILL.md"
+    assert_path_exists share/"sqrail/plugin.json"
 
     (testpath/"input.csv").write <<~CSV
       value
