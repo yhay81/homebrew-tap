@@ -1,12 +1,9 @@
 name: brew test-bot
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
   schedule:
-    - cron: "23 5 * * 1"
+    - cron: "38 22 * * 2"
   workflow_dispatch:
 
 permissions: {}
@@ -23,6 +20,7 @@ jobs:
             container:
               image: ghcr.io/homebrew/brew:main
               options: --privileged
+    timeout-minutes: 1
     runs-on: ${{ matrix.os }}
     container: ${{ fromJSON(toJSON(matrix.container)) }} # zizmor: ignore[unpinned-images]
     permissions:
@@ -64,7 +62,7 @@ jobs:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     name: Latest Homebrew dependency compatibility
     runs-on: macos-26
-    timeout-minutes: 30
+    timeout-minutes: 1
     permissions:
       contents: read
     steps:
