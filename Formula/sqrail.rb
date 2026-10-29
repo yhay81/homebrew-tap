@@ -2,7 +2,7 @@ class Sqrail < Formula
   desc "Bounded SQL-on-files CLI for coding agents"
   homepage "https://sqrail.yhay81.com"
   url "https://github.com/yhay81/sqrail/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "c6a0d55c35c9ccae2ffbbb5bded1e580593172dd21e47f856aab8e1519b95904"
+  sha256 "417dc8763b5cd58f6862983ce60f9164372bfb85c9e3ae8311f33fe6fa4520bb"
   license "MIT"
 
   depends_on "cmake" => :build
