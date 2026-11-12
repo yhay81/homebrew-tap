@@ -5,7 +5,7 @@ Official Homebrew formulae for projects maintained by
 
 ## sqrail
 
-Install [sqrail](https://sqrails.yhay81.com):
+Install [sqrail](https://sqrail.yhay81.com):
 
 ```sh
 brew install yhay81/tap/sqrail
